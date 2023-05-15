@@ -1,0 +1,123 @@
+
+.register-form {
+    padding: 20px 0 60px 0;
+
+
+    @include lg {
+        padding: 50px 0;
+    }
+
+    .container {
+        margin: 5rem auto 5rem auto;
+        padding: 30px;
+
+
+
+
+        @include md {
+            border: 1px solid $color-dark-5;
+        }
+
+        .title {
+            margin-bottom: 40px;
+        }
+
+        #account-registration {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+
+            .validation-summary-errors {
+                grid-area: message;
+                margin: 10px 0;
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            label {
+                margin-bottom: 0.5rem;
+            }
+
+
+            #firstName-container {
+                grid-area: firstNContainer;
+            }
+
+            #lastName-container {
+                grid-area: lastNContainer;
+            }
+
+            #streetName-container {
+                grid-area: streetNContainer;
+            }
+
+            #password-container {
+                grid-area: passwordContainer;
+            }
+
+            #passwordConfirmation-container {
+                grid-area: confirmPContainer;
+            }
+
+            #email-container {
+                grid-area: emailContainer;
+            }
+
+            #phoneNumber-container {
+                grid-area: phoneNContainer;
+            }
+
+            #companyName-container {
+                grid-area: companyNContainer;
+            }
+
+            #streetName-container {
+                grid-area: streetNContainer;
+            }
+
+            #postalCode-container {
+                grid-area: postalCContainer;
+            }
+
+            #city-container {
+                grid-area: cityContainer;
+            }
+
+            #country-container {
+                grid-area: countryContainer;
+            }
+
+            #profileImage-container {
+                grid-area: profileIContainer;
+            }
+
+            #button-container {
+                grid-area: buttonContainer;
+                width: 100%;
+            }
+
+            #terms-container {
+                grid-area: terms;
+            }
+
+            input {
+                width: 100%;
+            }
+
+
+            @media(min-width: 1200px) {
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "message message" "firstNContainer lastNContainer" "emailContainer phoneNContainer" "companyNContainer companyNContainer" "passwordContainer confirmPContainer" "streetNContainer streetNContainer" "postalCContainer cityContainer" "countryContainer countryContainer" "profileIContainer profileIContainer" "terms terms" "buttonContainer buttonContainer";
+            }
+        }
+    }
+}

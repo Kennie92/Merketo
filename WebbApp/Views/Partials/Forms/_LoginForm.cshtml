@@ -1,0 +1,31 @@
+﻿@model AccountLoginViewModel
+<section class="login-form">
+    <div class="container">
+        <div class="center-content">
+        <div class="title">@ViewData["Title"]</div>
+        <form method="post" novalidate asp-route-ReturnUrl="@Model.ReturnUrl">
+            <div asp-validation-summary="ModelOnly" class="form-group text-danger"></div>
+                <div id="email-container" class="form-group">
+                <label asp-for="Email">E-mail *
+                    <a class="text-danger" asp-action="Register" asp-controller="Account">Don't have an account yet?</a>
+                </label>
+                <input type="email" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+                <div id="password-container" class="form-group">
+                <label asp-for="Password"></label>
+                <input type="password" id="Password" asp-for="Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            <div id="terms" class="form-checkbox-group">
+                <label class="custom-checkbox"> 
+                    <label asp-for="RememberMe"></label>
+                    <input asp-for="RememberMe">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <button class="btn-theme">Submit</button>
+        </form>
+    </div>
+    </div>
+</section>

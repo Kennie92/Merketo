@@ -1,0 +1,21 @@
+﻿
+@model AddCategoryViewModel
+
+<section class="login-form">
+<div class="container mt-5">
+    <div class="d-flex justify-content-center">
+        <form class="col-10 col-xl-6" method="post" enctype="multipart/form-data" novalidate>
+
+            <div class="mb-3">
+                <label asp-for="CategoryName" class="form-label"></label>
+                <input asp-for="CategoryName" onkeyup="validateRequired(event)" autocomplete="off" />
+                <small><span asp-validation-for="CategoryName" class="text-danger"></span></small>
+            </div>
+
+            <div class="d-grid mt-5">
+                <button class="btn-theme">ADD CATEGORY</button>
+            </div>
+        </form>
+    </div>
+</div>
+</section>

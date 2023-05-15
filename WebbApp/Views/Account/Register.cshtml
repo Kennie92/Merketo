@@ -1,0 +1,97 @@
+﻿@model AccountRegisterViewModel
+
+@{
+    ViewData["Title"] = "Register new Account";
+}
+
+
+
+
+
+<section class="register-form">
+        <div class="container">
+    <div class="center-content">
+            <div class="title">@ViewData["Title"]</div>
+
+            <form method="post" id="account-registration" enctype="multipart/form-data" novalidate>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div id="firstName-container">
+                    <label class="MoveBitch" asp-for="FirstName"></label>
+                    <input type="text" asp-for="FirstName" />
+                    <small><span asp-validation-for="FirstName" class="text-danger"></span></small>
+                </div>
+                <div id="lastName-container">
+                    <label class="MoveBitch" asp-for="LastName"></label>
+                    <input type="text" asp-for="LastName" />
+                    <small><span asp-validation-for="LastName" class="text-danger"></span></small>
+                </div>
+                <div id="email-container">
+                    <label asp-for="Email"></label>
+                    <input type="email" asp-for="Email" />
+                    <small><span asp-validation-for="Email" class="text-danger"></span></small>
+                </div>
+                <div id="phoneNumber-container">
+                    <label asp-for="PhoneNumber"></label>
+                    <input type="text" asp-for="PhoneNumber" />
+                    <small><span asp-validation-for="PhoneNumber" class="text-danger"></span></small>
+                </div>
+                <div id="companyName-container">
+                    <label asp-for="CompanyName"></label>
+                    <input type="text" asp-for="CompanyName" />
+                    <small><span asp-validation-for="CompanyName" class="text-danger"></span></small>
+                </div>
+                <div id="password-container">
+                    <label asp-for="Password"></label>
+                    <input type="password" id="Password" asp-for="Password" />
+                    <small><span asp-validation-for="Password" class="text-danger"></span></small>
+                </div>
+                <div id="passwordConfirmation-container">
+                    <label asp-for="ConfirmPassword"></label>
+                    <input type="password" id="ConfirmPassword" asp-for="ConfirmPassword" />
+                    <small><span asp-validation-for="ConfirmPassword" class="text-danger"></span></small>
+                </div>
+                <div id="streetName-container">
+                    <label asp-for="StreetName"></label>
+                    <input type="text" asp-for="StreetName" />
+                    <small><span asp-validation-for="StreetName" class="text-danger"></span></small>
+                </div>
+                <div id="postalCode-container">
+                    <label asp-for="PostalCode"></label>
+                    <input type="text" asp-for="PostalCode" />
+                    <small><span asp-validation-for="PostalCode" class="text-danger"></span></small>
+                </div>
+                <div id="city-container">
+                    <label asp-for="City"></label>
+                    <input type="text" asp-for="City" />
+                    <small><span asp-validation-for="City" class="text-danger"></span></small>
+                </div>
+                <div id="country-container">
+                    <label asp-for="Country"></label>
+                    <input type="text" asp-for="Country" />
+                    <small><span asp-validation-for="Country" class="text-danger"></span></small>
+                </div>
+                <div id="profileImage-container">
+                    <label asp-for="ProfileImage"></label>
+                    <input type="file" asp-for="ProfileImage" />
+                    <small><span asp-validation-for="ProfileImage" class="text-danger"></span></small>
+                </div>
+                <div id="terms-container" class="form-checkbox-group">
+                    <label class="custom-checkbox">
+                        <label asp-for="TermsAndConditions"></label>
+                        <input asp-for="TermsAndConditions">
+                        <span class="checkmark"></span>
+                    </label>
+                    <span asp-validation-for="TermsAndConditions" class="text-danger"></span>
+                </div>
+                <div id="button-container">
+                    <button type="submit" class="btn btn-success">Register</button>
+                </div>
+            </form>
+
+
+
+        </div>
+
+    </div>
+</section>

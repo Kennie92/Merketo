@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = User.FindFirst("DisplayName")?.Value;
+}
+
+
+<section class="login-form">
+<div class="container">
+    @ViewData["Title"]
+</div>
+</section>

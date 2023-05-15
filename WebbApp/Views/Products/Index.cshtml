@@ -1,0 +1,44 @@
+﻿@using WebbApp.Models.Dtos;
+@using Webbappen.Repositories;
+@using Webbappen.Services;
+@model List<ProductModel>
+
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+@{
+    var products = await productService.GetAllAsync();
+}
+
+
+@if (products.Any())
+{
+    <section class="login-form">
+        <div class="container">
+            <h1 class="products-title">Top sellers</h1>
+            <div class="popular-products">
+                @foreach (var product in products.Take(6))
+                {
+                    <div class="card popularProducts-card">
+                        <img alt="Product image" src="@product.ImageUrl">
+                        <div class="info">
+                            <h2 class="product-title">@product.ProductName</h2>
+                            <p class="price-tag">@product.Price</p>
+                            <a class="cart"><i class="add-cart fa-regular fa-cart-plus"></i></a>
+                        </div>
+                    </div>
+                }
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+}

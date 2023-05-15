@@ -1,0 +1,33 @@
+﻿@using Webbappen.Models.Entitites;
+@model IEnumerable<ProductEntity>
+@{
+    Layout = "_BackOfficeLayout";
+    ViewData["Title"] = "Products";
+}
+
+
+
+<section class="login-form">
+<div class="container mt-5">
+        <div class="mb-5">
+    @ViewData["Title"]
+            <a class="text-danger" asp-action="New" asp-controller="AdminProducts">Create New Product</a>
+        </div>
+    @foreach (var item in Model)
+    {
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="mb-3 d-flex align-items-center">
+                <img style="height:60px" src="/Images/placeholders/@item.ImageUrl" alt="@item.ProductName" />
+                <div class="ms-3">
+                    <a asp-action="Details" asp-controller="products">
+                    <div><strong>@item.ProductName (@item.ArticleNumber)</strong></div>
+                        <div>@item.ProductDescription</div>
+                        </a>
+                </div>
+            </div>
+       
+        </div>
+
+    }
+</div>
+</section>
