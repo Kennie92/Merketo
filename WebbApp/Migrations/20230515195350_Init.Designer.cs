@@ -11,7 +11,7 @@ using WebbApp.Models.Contexts;
 namespace WebbApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230515190012_Init")]
+    [Migration("20230515195350_Init")]
     partial class Init
     {
         /// <inheritdoc />
@@ -113,13 +113,13 @@ namespace WebbApp.Migrations
             modelBuilder.Entity("WebbApp.Models.Entities.ProductTagEntity", b =>
                 {
                     b.HasOne("Webbappen.Models.Entitites.ProductEntity", "Product")
-                        .WithMany("Tags")
+                        .WithMany("ProductTags")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebbApp.Models.Entities.TagEntity", "Tag")
-                        .WithMany("Products")
+                        .WithMany("ProductTags")
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -147,12 +147,12 @@ namespace WebbApp.Migrations
 
             modelBuilder.Entity("WebbApp.Models.Entities.TagEntity", b =>
                 {
-                    b.Navigation("Products");
+                    b.Navigation("ProductTags");
                 });
 
             modelBuilder.Entity("Webbappen.Models.Entitites.ProductEntity", b =>
                 {
-                    b.Navigation("Tags");
+                    b.Navigation("ProductTags");
                 });
 #pragma warning restore 612, 618
         }

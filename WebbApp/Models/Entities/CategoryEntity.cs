@@ -1,4 +1,5 @@
-﻿using WebbApp.Models.Dtos;
+﻿using System.ComponentModel.DataAnnotations;
+using WebbApp.Models.Dtos;
 using Webbappen.Models.Entitites;
 
 namespace WebbApp.Models.Entities;
@@ -6,6 +7,8 @@ namespace WebbApp.Models.Entities;
 public class CategoryEntity
 {
     public int Id { get; set; }
+
+    [Required]
     public string CategoryName { get; set; } = null!;
 
 

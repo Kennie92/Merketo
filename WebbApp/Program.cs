@@ -20,6 +20,7 @@ builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<TagService>();
 builder.Services.AddScoped<TagRepository>();
 builder.Services.AddScoped<ProductTagRepository>();
+builder.Services.AddScoped<ContactService>();
 
 
 builder.Services.AddDbContext<IdentityContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Identity")));

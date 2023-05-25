@@ -40,7 +40,10 @@ public class AccountController : Controller
     public async Task<IActionResult> Register(AccountRegisterViewModel model)
     {
 
-
+        if (model.TermsAndConditions != true)
+        {
+            ModelState.AddModelError("", "You must agree with the terms and conditions");
+        }
 
       
 

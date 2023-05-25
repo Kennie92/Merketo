@@ -41,7 +41,7 @@ public class TagService
             {
                 Value = tag.Id.ToString(),
                 Text = tag.TagName,
-                Selected = selectedTags!.Contains(tag.Id.ToString())
+                Selected = selectedTags.Contains(tag.Id.ToString())
             });
         }
         return tags;

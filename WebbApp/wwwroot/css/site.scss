@@ -1,38 +1,30 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=Roboto:wght@300;400;500;700;900&display=swap');
-
-$font-poppins: 'Poppins', sans-serif;
-$font-roboto: 'Roboto', sans-serif;
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-$font-weight-black: 900;
+﻿
 
 
 
-
-
-@import './cores/_colors.scss';
+@import 'cores/_fonts.scss';
+@import 'cores/_colors.scss';
 @import 'cores/_mixins.scss';
+
 @import 'components/_base.scss';
-@import 'components/_form.scss';
-@import 'components/_header.scss';
-@import 'components/_footer.scss';
-@import 'components/_buttons.scss';
-@import 'components/_collectionitem.scss';
-@import 'components/_collectioncontent.scss';
-@import 'components/_forms.scss';
-
-
-
-@import 'components/_breadcrumb.scss';
-@import 'components/_map.scss';
-@import 'components/_showcase.scss';
 @import 'components/_bestcollection.scss';
-@import 'components/_uptosell.scss';
-@import 'components/_topselling.scss';
-@import 'components/_newsletter.scss';
+@import 'components/_breadcrumb.scss';
+@import 'components/_buttons.scss';
+@import 'components/_collectioncontent.scss';
+@import 'components/_collectionitem.scss';
 @import 'components/_contactform.scss';
+@import 'components/_footer.scss';
+@import 'components/_registerform.scss';
+@import 'components/_forms.scss';
+@import 'components/_map.scss';
+@import 'components/_newsletter.scss';
 @import 'components/_loginForm.scss';
-@import 'components/_newproduct.scss';
+@import 'components/_showcase.scss';
+@import 'components/_topselling.scss';
+@import 'components/_uptosell.scss';
+@import 'components/_details.scss';
+@import 'components/_header.scss';
+@import 'components/_productCard.scss';
+@import 'components/_creatproduct.scss';
+@import 'components/_userprofiles.scss';
+

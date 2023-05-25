@@ -8,37 +8,39 @@ public class AdminProductsNewViewModel
 {
     public int Id { get; set; }
 
-    [Display(Name = "Artikelnummer")]
-    [Required(ErrorMessage = "Du måste ange ett artikelnummer")]
+    [Display(Name = "Article Number")]
+    [Required(ErrorMessage = "You must enter a article number")]
     public string ArticleNumber { get; set; } = null!;
 
 
-    [Display(Name = "Produktens namn")]
-    [Required(ErrorMessage = "Du måste ange ett produktnamn")]
+    [Display(Name = "Product name")]
+    [Required(ErrorMessage = "You must enter a product name")]
     public string ProductName { get; set; } = null!;
 
-    [Display(Name = "Produktbeskrivning")]
-    [Required(ErrorMessage = "Du måste ange en produktbeskrivning")]
+    [Display(Name = "Product description")]
+    [Required(ErrorMessage = "You must enter a product description")]
     public string ProductDescription { get; set; } = null!;
 
 
 
 
-    [Display(Name = "Produktens Pris (SEK)")]
-    [Required(ErrorMessage = "Du måste ange ett pris")]
+    [Display(Name = "Product price ($)")]
+    [Required(ErrorMessage = "You must enter a price for the product")]
 
     public decimal Price { get; set; }
 
 
 
-    [Display(Name = "Produktbild")]
-    public IFormFile ImageUrl { get; set; } = null!;
+    [Display(Name = "Product image")]
+    [Required(ErrorMessage = "You must add a image for the product")]
+    public string ImageUrl { get; set; } = null!;
 
 
 
-    
 
 
+    [Display(Name = "Category")]
+    [Required(ErrorMessage = "You must choose a category")]
     public int CategoryId { get; set; }
 
   
@@ -54,7 +56,7 @@ public class AdminProductsNewViewModel
             ProductDescription = model.ProductDescription,
             Price = model.Price,
             CategoryId = model.CategoryId,
-            ImageUrl = model.ImageUrl.FileName,
+            ImageUrl = model.ImageUrl,
         };
     }
 

@@ -1,26 +1,14 @@
 ﻿[
   {
-    "outputFile": "wwwroot/css/site.css",
-    "inputFile": "wwwroot/css/site.scss"
-  },
-  {
-    "outputFile": "wwwroot/css/components/_form.css",
-    "inputFile": "wwwroot/css/components/_form.scss"
-  },
-  {
-    "outputFile": "wwwroot/css/components/_footer.css",
-    "inputFile": "wwwroot/css/components/_footer.scss"
-  },
-  {
-    "outputFile": "wwwroot/css/components/_header.css",
-    "inputFile": "wwwroot/css/components/_header.scss"
-  },
-  {
-    "outputFile": "wwwroot/css/cores/_colors.css",
-    "inputFile": "wwwroot/css/cores/_colors.scss"
-  },
-  {
     "outputFile": "wwwroot/css/cores/_base.css",
     "inputFile": "wwwroot/css/cores/_base.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/components/_newproduct.css",
+    "inputFile": "wwwroot/css/components/_newproduct.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/site.css",
+    "inputFile": "wwwroot/css/site.scss"
   }
 ]

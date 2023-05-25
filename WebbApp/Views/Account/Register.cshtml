@@ -17,12 +17,12 @@
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                 <div id="firstName-container">
-                    <label class="MoveBitch" asp-for="FirstName"></label>
+                    <label asp-for="FirstName"></label>
                     <input type="text" asp-for="FirstName" />
                     <small><span asp-validation-for="FirstName" class="text-danger"></span></small>
                 </div>
                 <div id="lastName-container">
-                    <label class="MoveBitch" asp-for="LastName"></label>
+                    <label asp-for="LastName"></label>
                     <input type="text" asp-for="LastName" />
                     <small><span asp-validation-for="LastName" class="text-danger"></span></small>
                 </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div id="postalCode-container">
                     <label asp-for="PostalCode"></label>
-                    <input type="text" asp-for="PostalCode" />
+                    <input type="number" asp-for="PostalCode" />
                     <small><span asp-validation-for="PostalCode" class="text-danger"></span></small>
                 </div>
                 <div id="city-container">
@@ -68,8 +68,7 @@
                 </div>
                 <div id="country-container">
                     <label asp-for="Country"></label>
-                    <input type="text" asp-for="Country" />
-                    <small><span asp-validation-for="Country" class="text-danger"></span></small>
+                    <input type="text" asp-for="Country" /> 
                 </div>
                 <div id="profileImage-container">
                     <label asp-for="ProfileImage"></label>
@@ -81,8 +80,8 @@
                         <label asp-for="TermsAndConditions"></label>
                         <input asp-for="TermsAndConditions">
                         <span class="checkmark"></span>
+                        <small> <span asp-validation-for="TermsAndConditions" class="text-danger"></span></small>
                     </label>
-                    <span asp-validation-for="TermsAndConditions" class="text-danger"></span>
                 </div>
                 <div id="button-container">
                     <button type="submit" class="btn btn-success">Register</button>

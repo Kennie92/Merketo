@@ -1,15 +1,28 @@
-﻿
+﻿@model List<ProductModel>
 
-<section class="showcase">
 
-    <div class="container">
-        <div class="content">
-            <div class="ingress"></div>
-            <div class="title"></div>
-            <button class="btn-theme"></button>
-        </div>
-        <div class="content-image">
-            <img src="~/Images/Placeholders/625x647.svg" alt="">
-        </div>
-    </div>
-</section>
+
+@{
+    var products = await productService.GetIfNewAsync();
+
+}
+
+
+
+ 
+    @if (products.Any())
+    {
+    <section class="showcase">
+            <div class="container showcase">
+                <div class="content">
+                    <p class="ingress">WELCOME TO BMERKETO SHOP</p>
+                    <h3 class="title">Exclusive Chair<br>Gold Collection.</h3>
+                <a class="btn btn-success" asp-controller="Products" asp-action="Index">SHOP NOW</a>
+                </div>
+
+            <div class="content-image">
+                <img class="img" src="@products.First(x => x.ProductId == 34).ImageUrl">
+                </div>
+            </div>
+        </section>
+    }

@@ -23,10 +23,6 @@ public class AdminController : Controller
         return View();
     }
 
-    public IActionResult Users()
-    {
-        return View();
-    }
-
+ 
 
 }

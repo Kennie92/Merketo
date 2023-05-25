@@ -1,0 +1,23 @@
+﻿@using WebbApp.Helpers.Services;
+@{  
+
+    var userService = new UserService(userManager);
+    var users = await userService.GetAllUsersWithRolesAsync();
+}
+
+<section class="user-profiles">
+    <div class="container">
+
+        <h3 class="mb-5">Merketo users:</h3>
+        @foreach (var user in users)
+        {
+            <div col-6">
+                <p><b>First name:</b> @user.firstName</p>
+                <p><b>Last name:</b> @user.lastName</p>
+                <p><b>Email address:</b> @user.email</p>
+                <p><b>User role:</b> @user.roleName</p>
+                <hr />
+            </div>
+        }
+    </div>
+</section>

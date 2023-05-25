@@ -1,0 +1,40 @@
+﻿@model List<ProductModel>
+
+
+@{
+    var productsTag = await productService.GetIfPopularAsync();
+}
+
+
+@if (productsTag.Any())
+{
+
+<section class="top-selling">
+    <div class="container-fluid">
+        <h1 class="collection-title">Top selling products in this week</h1>
+        <div class="collection-grid">
+                @foreach (var products in productsTag.Take(6))
+                {
+            <div class="Topselling-Card">
+                        <a class="collection-item" href="@Url.Action("details","products", new { id = products.ProductId})">
+                <img class="card-image-small" src="@products.ImageUrl" alt="">
+                <div class="body">
+                    <div class="title">@products.ProductName</div>
+                    <div class="info">
+                        <div class="price">@products.Price</div>
+                        <i class="add-cart fa-regular fa-cart-plus"></i>
+                    </div>
+                </div>
+                        </a>
+            </div>
+                    }
+            <!-- collection-item end -->
+        </div>
+        <div class="load-more">
+            <button class="btn-outline-white me-1"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="btn-outline-white ms-1"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+           
+</section>
+ }

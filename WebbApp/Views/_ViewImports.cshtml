@@ -2,13 +2,13 @@
 @using Microsoft.AspNetCore.Identity;
 @using WebbApp.Models.ViewModels;
 @using WebbApp.Models.Entities;
-
+@using WebbApp.Models.Dtos;
 @using WebbApp.Models.Identities;
 @using WebbApp.Models.Interfaces;
 @using Webbappen.Repositories;
 @using Webbappen.Services;
 @inject ProductService productService;
-@inject ProductRepository productRepository
+@inject ProductRepository productRepository;
 
-@inject SignInManager<AppUser> signInManager
-@inject UserManager<AppUser> userManager
+@inject SignInManager<AppUser> signInManager;
+@inject UserManager<AppUser> userManager;

@@ -63,18 +63,70 @@ public class ProductService
         return false;
     }
 
+    public async Task<ProductModel> GetProductDetailsAsync(int id)
+    {
+        var detailedProduct = await _context.Products.FindAsync(id);
+
+        if (detailedProduct == null)
+        {
+            return null;
+        }
+
+        return detailedProduct;
+    }
+
     public async Task AddProductTagsAsync(ProductEntity entity, string[] tags)
     {
-        foreach(var tag in tags)
+        var productEntity = await _productRepo.GetAsync(x => x.ArticleNumber == entity.ArticleNumber);
+        foreach (var tag in tags)
         {
             await _productTagRepo.AddAsync(new ProductTagEntity
             {
-                ProductId = entity.Id,
+                ProductId = productEntity.Id,
                 TagId = int.Parse(tag)
             });
         }
     }
 
+
+
+
+
+    public async Task<IEnumerable<ProductTagModel>> GetIfPopularAsync()
+    {
+        var productsTag = new List<ProductTagModel>();
+        var items = await _context.ProductTags.Where(x => x.TagId == 1).Select(x => x.Product).ToListAsync();
+        foreach (var item in items)
+        {
+            ProductTagModel model = item;
+            productsTag.Add(model);
+        }
+        return productsTag;
+    }
+
+    public async Task<IEnumerable<ProductTagModel>> GetIfNewAsync()
+    {
+        var productsTag = new List<ProductTagModel>();
+        var items = await _context.ProductTags.Where(x => x.TagId == 2).Select(x => x.Product).ToListAsync();
+        foreach (var item in items)
+        {
+            ProductTagModel model = item;
+            productsTag.Add(model);
+        }
+        return productsTag;
+    }
+
+    public async Task<IEnumerable<ProductTagModel>> GetIfFeaturedAsync()
+    {
+        var productsTag = new List<ProductTagModel>();
+        var items = await _context.ProductTags.Where(x => x.TagId == 3).Select(x => x.Product).ToListAsync();
+        foreach (var item in items)
+        {
+            ProductTagModel model = item;
+            productsTag.Add(model);
+        }
+        return productsTag;
+    }
 
 
 }

@@ -1,0 +1,101 @@
+.details-container {
+    padding: 20px 0 60px 0;
+
+    .detail-product-card {
+        width: 80rem;
+        margin: 4rem auto 0 auto;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .product-info-container {
+            margin-left: 3rem;
+                
+        }
+
+
+        .product-input-quantity-container {
+            position: relative;
+            width: 130px;
+            border: 1px solid #DDDDDD;
+
+
+            .product-input-quantity {
+                width: 50px;
+                border-right: 1px solid #ddd;
+                border-left: 1px solid #ddd;
+                border-top: none;
+                border-bottom: none;
+                padding-left: 20px;
+            }
+
+            #inc-button {
+                right: 12px;
+                top: 12px;
+            }
+
+            #dec-button {
+                left: 12px;
+                top: 12px;
+            }
+
+            .volume-button {
+                color: black;
+                font-size: 16px;
+                position: absolute;
+                z-index: 2;
+                text-align: center;
+                height: 10px;
+                line-height: 10px;
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+
+        .product-image-container {
+            margin: auto 0;
+
+            #main-image {
+                width: 55%;
+                margin-left: 8rem;
+                max-height:250px;
+            }
+
+            .sec-image {
+                width: 15%;
+            }
+        }
+
+        .button-product {
+            margin-left: 1rem;
+            border: none;
+            color: white;
+        }
+
+        .product-detail-title {
+            font-size: 22px;
+            color: #292929;
+            font-weight: $font-weight-medium;
+        }
+
+        .product-detail-description {
+            font-family: $font-roboto;
+            font-size: 12px;
+            font-weight: $font-weight-regular;
+        }
+
+        .product-detail-price {
+            font-weight: $font-weight-semibold;
+            font-size: 20px;
+            color: #292929;
+        }
+
+
+
+
+
+        .stars {
+            color: $color-yellow;
+        }
+    }
+}

@@ -3,18 +3,21 @@
 .best-collection {
     padding: 40px 20px;
 
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
     .collection-title {
         text-align: center;
         font-family: $font-poppins;
         font-weight: $font-weight-semibold;
-        font-size: 38px;
+        font-size: 30px;
         color: $color-dark-2;
-
-        @include md {
-            font-size: 48px;
-        }
     }
-    
+
     .categories {
         display: none;
         justify-content: center;
@@ -37,21 +40,51 @@
     }
 
     .collection-grid {
-        margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 40px;
+        gap: 30px;
+        font-size: 20px;
+        justify-content: space-around;
+        margin: 40px auto 20px auto;
+        align-items: center;
+
+
+        .Topselling-Card {
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            font-size: 15px;
+
+            img {
+                width: 210px;
+                height: 190px;
+            }
+        }
 
         @include md {
             grid-template-columns: repeat(2, 1fr);
         }
+
         @include lg {
             grid-template-columns: repeat(3, 1fr);
         }
+
         @include xl {
             grid-template-columns: repeat(4, 1fr);
         }
 
+        .collection-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .body {
+                .title {
+                    font-size: 14px;
+                    font-weight: $font-weight-medium;
+                }
+            }
+        }
     }
 
     .load-more {

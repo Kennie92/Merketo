@@ -7,31 +7,31 @@
     ViewData["Title"] = "Create New Product";
 }
 
-<section class="login-form">
+<section class="product-form">
 <div class="container">
    
         <form class="" method="post" enctype="multipart/form-data" novalidate>
             <div class="article-container">
-                <label asp-for="ArticleNumber" class="form-label"></label>
-                <input asp-for="ArticleNumber" onkeyup="validateRequired(event)" autocomplete="off" />
+                <label asp-for="ArticleNumber" class="form-label">Article Number</label>
+                <input asp-for="ArticleNumber" type="text" onkeyup="validateRequired(event)" autocomplete="off" />
                 <small><span asp-validation-for="ArticleNumber" class="text-danger"></span></small>
             </div>
 
             <div class="productName-container">
-                <label asp-for="ProductName" class="form-label"></label>
-                <input asp-for="ProductName" class="form-control" onkeyup="validateRequired(event)" autocomplete="off" />
+                <label asp-for="ProductName" class="form-label">Product Name</label>
+                <input asp-for="ProductName" type="text" class="form-control" onkeyup="validateRequired(event)" autocomplete="off" />
                     <small><span asp-validation-for="ProductName" class="text-danger"></span></small>
             </div>
 
             <div class="productDescription-container">
-                    <label asp-for="ProductDescription" class="form-label"></label>
+                    <label asp-for="ProductDescription" class="form-label">Product Description</label>
                     <textarea asp-for="ProductDescription" rows="5" onkeyup="validateRequired(event)" autocomplete="off"></textarea>
                     <small><span asp-validation-for="ProductDescription" class="text-danger"></span></small>
             </div>
        
             <div class="price-container">
-                <label asp-for="Price" class="form-label"></label>
-                <input asp-for="Price" value="0" onkeyup="validateRequired(event)" autocomplete="off" />
+                <label asp-for="Price" class="form-label">Price $</label>
+                <input asp-for="Price" type="number" value="0" onkeyup="validateRequired(event)" autocomplete="off" />
                 <small><span asp-validation-for="Price" class="text-danger"></span></small>
             </div>
 
@@ -41,7 +41,7 @@
 
                     <div class="">
                 <div class="">
-                    <label asp-for="CategoryId" class="form-label"></label>
+                    <label asp-for="CategoryId" class="form-label">Category</label>
                     <select asp-for="CategoryId" >
                         <option value="">Select a category</option>
                                 <option value="1">Dresses</option>
@@ -51,6 +51,7 @@
                                 <option value="5">Laptops</option>
                                 <option value="6">Phones</option>
                             <option value="7">Beauty</option>
+                            <option value="8">Bags</option>
                     </select>
                     <small><span asp-validation-for="CategoryId" class="text-danger"></span></small>
                 </div>
@@ -58,32 +59,32 @@
                 </div>
                 </div>
 
-
-            <div class="tag-container">
+          
+            <div class="tag-container" required>
             @foreach(SelectListItem tag in ViewBag.Tags)
             {
               <div>
-                        <input type="checkbox" name="Tags" id="tag-@tag.Text-@tag.Value" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
-                        <label for="tag-@tag.Text-@tag.Value" class="form-check-label">@tag.Text</label>
-              </div>
-                
-            }
-            </div>
+                        <input type="checkbox" name="Tags" id="@tag.Text-@tag.Value" value="@tag.Value" checked="@tag.Selected" class="form-check-input" />
+                        <label for="@tag.Text-@tag.Value" class="form-check-label">@tag.Text</label>
 
+                    </div>
+
+                    <small asp-validation-for="@tag.Text-@tag.Value" class="text-danger"></small>
+                   
+            }
+                
+            </div>
+           
 
 
             <div class="image-container">
-                <label asp-for="ImageUrl" class="form-label"></label>
-                <label class="custom-upload">
-                    <div class="btn-theme">Bläddra..</div>
-                    <input asp-for="ImageUrl" class="custom-upload-input" onchange="getFileName(event)" />
-                    <label asp-for="ImageUrl" id="fileName" class="custom-upload-name">Ingen fil vald</label>
-                </label>
+                <label asp-for="ImageUrl" class="form-label">Product Image</label>
+                <input asp-for="ImageUrl" class="form-control" onkeyup="validateRequired(event)" autocomplete="off" />
                 <small><span asp-validation-for="ImageUrl" class="text-danger"></span></small>
             </div>
 
             <div class="button-container">
-                <button type="submit" class="btn-theme">SKAPA PRODUKT</button>
+                <button type="submit" class="btn-theme">CREATE PRODUCT</button>
             </div>
         </form>
     </div>

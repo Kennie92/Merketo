@@ -1,4 +1,4 @@
-.login-form {
+﻿.product-form {
     padding: 20px 0 60px 0;
 
     @include lg {
@@ -6,8 +6,9 @@
     }
 
     .container {
-        margin: 5rem auto 5rem auto;
+        margin: 10rem auto 5rem auto;
         padding: 30px;
+        width:50rem;
 
         @include md {
             border: 1px solid $color-dark-5;
@@ -39,18 +40,42 @@
                 margin-bottom: 0.5rem;
             }
 
-            #email-container {
-                grid-area: email;
+            .article-container {
+                grid-area: article;
             }
 
-            #password-container {
-                grid-area: password;
+            .productName-container {
+                grid-area: productName;
             }
 
-            #terms {
-                grid-area: rememberme;
-                margin: 10px 0;
-                align-items: center;
+            .productDescription-container {
+                grid-area: productDescription;
+            }
+
+            .price-container {
+                grid-area: price;
+            }
+
+            .category-container {
+                grid-area: category;
+                margin-top: 2rem;
+            }
+
+
+            .tag-container {
+                padding: 0 2rem 0 2rem;
+                grid-area: tag;
+                display:flex;
+                justify-content:space-around;
+               align-items:center;
+
+                input{
+                    width:2rem;
+                }
+            }
+
+            .image-container {
+                grid-area: image;
             }
 
             button {
@@ -70,7 +95,7 @@
                 display: grid;
                 gap: 2rem;
                 grid-template-columns: 1fr 1fr;
-                grid-template-areas: "message message" "email email" "password password" "rememberme rememberme" "button button";
+                grid-template-areas: "article productName" "category price" "productDescription productDescription" "tag tag" "image image" "button button";
             }
         }
     }
